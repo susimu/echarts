@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="Access-Control-Allow-Origin" content="*">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>		
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/city.css"/>
+	
+	<body>
+		<div class="container">
+			<div class="row checkRow">
+				<div class="table-viewer-header">
+                    <span class="table-viewer-topbar-title">查询条件</span>
+                    <a data-toggle="collapse" href="#collapseOne" class="toggle-drop-down-icon"><span class="glyphicon glyphicon-chevron-up collapse-fa"></span></a>
+                </div>
+                <div id="collapseOne" class="collapse in">
+					<div class="col-md-4">			
+				 		<label>
+					    	选择城市：				    	
+					    </label>
+				 		<a class="btn" name="cityAll" href="javascript:checkAllCity(true);">全选</a>
+				 		<a class="btn" name="cityNo" href="javascript:checkAllCity(false);">全不选</a><br />
+		    			<div id = "checkCity"></div>
+					</div>
+					<div class="col-md-4">			
+				 		<label>
+					    	选择地区：				    	
+					    </label>
+					    <a class="btn" name="areaAll" href="javascript:checkAllArea(true);">全选</a>
+				 		<a class="btn" name="areaNo" href="javascript:checkAllArea(false);">全不选</a><br />
+				 		<div id = "checkArea"></div>
+					</div>
+					<div class="col-md-3">			
+				 		<label>
+					    	选择时间：				    	
+					    </label>
+				 		<input type="text" class="form-control date" id="dateTime"  maxlength="18"  value="2016-02">
+					</div>
+					<div class="col-md-1">			
+				 		<button  type="button" class="btn btn-default">查询</button>
+					</div>
+	           </div>
+            </div>
+           	<div class="row">
+          		<div class="table-viewer-header">
+                    <span class="table-viewer-topbar-title">展示结果</span>
+                    <a data-toggle="collapse" href="#collapseTwo" class="toggle-drop-down-icon"><span class="glyphicon glyphicon-chevron-up collapse-fa"></span></a>
+                </div>
+            	<div id="collapseTwo" class="collapse in">
+            		<div class="row">
+						<div class="col-md-6">
+							<div class="panel panel-default topPanel">
+								<div class="panel-heading">
+									<span id = "span_bar"></span>
+								</div>
+								<div class="panel-body">
+									<div id="barLine"></div>
+								</div>
+							</div>
+						</div>				
+						<div class="col-md-6">
+							<div class="panel panel-default topPanel">
+								<div class="panel-heading">
+									<span id = "span_tab"></span>
+								</div>
+								<div class="panel-body">
+									<div id="tabLine">
+										<table id ="tabData" class="table table-bordered table-striped text-center">
+											<thead>
+												<tr >
+													<td rowspan="2">项目</td>
+													<td colspan="2">进口</td>
+												</tr>
+												<tr>
+													<th>单月金额</th>
+													<th>累计金额</th>
+												</tr>
+											</thead>
+											<tbody>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>			
+					<div class="row">
+						<div class="col-md-6" rowspan = "2">
+							<div class="panel panel-default maxPanel">
+								<div class="panel-heading">
+									<span id = "span_map"></span>
+								</div>
+								<div class="panel-body">
+									<div class="col-md-1 col-md-offset-10">
+										<a id="btn_map" class="btn">刷新</a>
+									</div>
+									<div id="mapLine"></div>
+								</div>
+							</div>	
+						</div>	
+						<div class="col-md-6">
+							<div class="panel panel-default minPanel">
+								<div class="panel-heading">
+									<span id = "span_fan"></span>
+								</div>
+								<div class="panel-body">
+									<div id="fanLine"></div>
+								</div>
+							</div>
+							<div class="panel panel-default minPanel">
+								<div class="panel-heading">
+									<span id = "span_column"></span>
+								</div>
+								<div class="panel-body">
+									<div id="columnLine"></div>
+								</div>
+							</div>
+						</div>								
+					</div>				
+            	</div>
+            </div>
+		</div>
+		
+		<script src="js/bootstrap/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap/jquery.dataTables.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap/bootstrap-datetimepicker.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap/bootstrap-datetimepicker.zh-CN.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/chart/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/cityIn.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
